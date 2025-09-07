@@ -203,3 +203,10 @@ def report(p: ReportIn):
     (proj / "report.html").write_text(html)
     # Served via /static
     return {"status": "ok", "links": {"report_html": f"/static/{p.project_id}/report.html"}}
+@app.get("/")
+def root():
+    return {"ok": True, "service": "small-worker", "status": "ready"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
