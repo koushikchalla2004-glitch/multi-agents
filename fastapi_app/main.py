@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from typing import Optional
 
 # Simple artifact root (mount a persistent volume in production)
-ART_DIR = Path(os.getenv("ARTIFACT_ROOT", "/mnt/artifacts"))
+ART_DIR = Path(os.getenv("ARTIFACT_ROOT", "./artifacts"))
 ART_DIR.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="One-Click Data Team – Worker API")
